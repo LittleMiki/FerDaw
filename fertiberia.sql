@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-01-2019 a las 13:29:07
--- Versión del servidor: 10.1.29-MariaDB
--- Versión de PHP: 7.0.26
+-- Tiempo de generación: 10-01-2019 a las 15:34:11
+-- Versión del servidor: 10.1.36-MariaDB
+-- Versión de PHP: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -40,6 +40,14 @@ CREATE TABLE `ur_ngreen` (
   `ph` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `ur_ngreen`
+--
+
+INSERT INTO `ur_ngreen` (`fecha`, `so3`, `mgo`, `n2_total`, `n2_amidico`, `n2_nitrico`, `n2_amonico`, `densidad`, `ph`) VALUES
+('0000-00-00', 2, 2, 2, 2, 2, 2, 2, 2),
+('0000-00-00', 3, 3, 3, 3, 3, 3, 3, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -52,6 +60,14 @@ CREATE TABLE `ur_solucion25_t1` (
   `densidad` int(11) NOT NULL,
   `temperatura` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `ur_solucion25_t1`
+--
+
+INSERT INTO `ur_solucion25_t1` (`fecha`, `amoniaco`, `densidad`, `temperatura`) VALUES
+('0000-00-00', 1, 1, 1),
+('0000-00-00', 2, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -66,6 +82,14 @@ CREATE TABLE `ur_solucion25_t2` (
   `temperatura` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `ur_solucion25_t2`
+--
+
+INSERT INTO `ur_solucion25_t2` (`fecha`, `amoniaco`, `densidad`, `temperatura`) VALUES
+('0000-00-00', 1, 1, 1),
+('0000-00-00', 2, 2, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -73,7 +97,7 @@ CREATE TABLE `ur_solucion25_t2` (
 --
 
 CREATE TABLE `ur_solucion32_v181` (
-  `fecha` date NOT NULL,
+  `fecha` varchar(30) NOT NULL,
   `n2_total` int(11) NOT NULL,
   `n2_amidico` int(11) NOT NULL,
   `n2_nitrico` int(11) NOT NULL,
@@ -81,6 +105,14 @@ CREATE TABLE `ur_solucion32_v181` (
   `densidad` int(11) NOT NULL,
   `ph` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `ur_solucion32_v181`
+--
+
+INSERT INTO `ur_solucion32_v181` (`fecha`, `n2_total`, `n2_amidico`, `n2_nitrico`, `n2_amonico`, `densidad`, `ph`) VALUES
+('', 2, 2, 2, 2, 2, 2),
+('', 3, 3, 3, 3, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -98,6 +130,14 @@ CREATE TABLE `ur_solucion32_v182` (
   `ph` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `ur_solucion32_v182`
+--
+
+INSERT INTO `ur_solucion32_v182` (`densidad`, `fecha`, `n2_amidico`, `n2_nitrico`, `n2_amonico`, `n2_total`, `ph`) VALUES
+(2, '0000-00-00', 3, 3, 2, 2, 2),
+(1, '0000-00-00', 2, 2, 2, 2, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -114,6 +154,14 @@ CREATE TABLE `ur_solucion32_v183` (
   `ph` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `ur_solucion32_v183`
+--
+
+INSERT INTO `ur_solucion32_v183` (`densidad`, `fecha`, `n2_amidico`, `n2_amonico`, `n2_nitrico`, `n2_total`, `ph`) VALUES
+(2, '0000-00-00', 3, 3, 3, 3, 3),
+(4, '0000-00-00', 5, 5, 5, 5, 5);
+
 -- --------------------------------------------------------
 
 --
@@ -127,6 +175,14 @@ CREATE TABLE `ur_torre_ref` (
   `nitrito` int(11) NOT NULL,
   `nitrato` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `ur_torre_ref`
+--
+
+INSERT INTO `ur_torre_ref` (`fecha`, `ph`, `amoniaco`, `nitrito`, `nitrato`) VALUES
+(0, 2, 2, 2, 2),
+(0, 3, 3, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -142,6 +198,14 @@ CREATE TABLE `ur_urea` (
   `granulometria` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `ur_urea`
+--
+
+INSERT INTO `ur_urea` (`fecha`, `n2Total`, `humedad`, `biuret`, `granulometria`) VALUES
+('0000-00-00', 32, 1, 1, 1),
+('0000-00-00', 32, 2, 2, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -153,6 +217,13 @@ CREATE TABLE `usuario` (
   `email` varchar(50) NOT NULL,
   `password` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`nombre`, `email`, `password`) VALUES
+('basico', 'ufertiberia', 1234);
 
 --
 -- Índices para tablas volcadas

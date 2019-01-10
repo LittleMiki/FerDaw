@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::post('login','Urea@login');
+Route::post('soluciones','Urea@ComprobarRedireccion');
+Route::post('Volver','Urea@volver');
