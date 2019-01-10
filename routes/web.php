@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('VistaUrea');
+    return view('inicio');
 });
 
 Route::post('login','Urea@login');
