@@ -4,7 +4,8 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"> 
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
         <title>Laravel</title>
 
         <!-- Fonts -->
@@ -58,48 +59,71 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
+            #login{
+                font-size: 4em;
+                border: thin solid #03512A; 
+                background: linear-gradient(to bottom, rgba(75,154,0,1) 0%,rgba(3,79,41,1) 100%);
+
+            }
+
+            .btn-success{
+                font-size: 4vh;
+                background-color: #03512A;
+
+            }
+            #form{
+                padding: 70px;
+                background-color: white;
+                border: thin solid #03512A;
+            }
+          
+            #todo{
+                width: auto;
+                background-color: white;
+            }
+            #pass, #em{
+                height: 80px;
+            }
+
+
 
             .m-b-md {
                 margin-bottom: 30px;
             }
         </style>
         <?php
-            if(isset($msg))
-            {
-                ?>
-                <script>
-                    alert("<?php echo $msg ?>");
-                </script>
-                <?php
-            }
+        if (isset($msg)) {
+            ?>
+            <script>
+    alert("<?php echo $msg ?>");
+            </script>
+            <?php
+        }
         ?>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
-            <form name="formulario" method="POST" action="login">
-                {!! csrf_field(); !!}
-                <div class="row">
-                    <div class="col-2">
-                        <label for="em">Email</label>
-                    </div>
-                    <div class="col-4">
-                        <input type="text" id="em" name="em" value="">
-                    </div>
+        <div class="flex-center position-ref full-height" id="login">
+            <div id="todo">
+                <div>
+                <img src="images/logo.jpg">
                 </div>
-                <div class="row">
-                    <div class="col-2">
-                        <label for="pass">Contraseña</label>
-                    </div>
-                    <div class="col-4">
-                        <input type="password" id="pass" name="pass" value="">
-                    </div>
+                <div id="form">
+                    <form method="POST" action="login">
+                        {!! csrf_field(); !!}
+                        <div class="form-group" >
+                            <label for="em">Email</label>
+                            <input type="text" class="form-control" id="em" name="em" aria-describedby="emailHelp" placeholder="Introduce email">
+                        </div>
+                        <div class="form-group">
+                            <label for="pass">Contraseña</label>
+                            <input type="password" class="form-control" id="pass" placeholder="******">
+                        </div>
+                        <div style="margin-top: 10px" class=" offset-2 col-2">
+                            <input class="btn-success" type="submit" name="btn" id="btn" value="Entrar">
+                        </div>
+                    </form>
                 </div>
-                <div class="row">
-                    <div class="col-2">
-                        <input class="btn-primary" type="submit" name="btn" id="btn" value="Entrar">
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
     </body>
 </html>
