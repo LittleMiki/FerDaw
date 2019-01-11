@@ -74,12 +74,13 @@
             #form{
                 padding: 70px;
                 background-color: white;
-                border: thin solid #03512A;
+               
             }
           
             #todo{
                 width: auto;
                 background-color: white;
+                border: thin solid #03512A;
             }
             #pass, #em{
                 height: 80px;
