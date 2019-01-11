@@ -30,7 +30,7 @@ class Urea extends Controller {
     function ComprobarRedireccion(Request $resq) {
         $d = $resq->get('urea');
 
-        if ($d == 'Urea') {
+        if ($d == 'Nuevo análisis') {
             $datos = \DB::table('ur_urea')
                     ->get();
             \Session::put('tUrea', $datos);
